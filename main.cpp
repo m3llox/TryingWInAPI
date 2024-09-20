@@ -5,7 +5,7 @@
 #include <atlstr.h>
 #include <string>
 
-#define CREATE_THREAD_ACCESS (PROCESS_CREATE_THREAD() | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ)
+#define CREATE_THREAD_ACCESS (PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ)
 
 
 BOOL InjectDLL(DWORD ProcessID)
@@ -22,7 +22,7 @@ BOOL InjectDLL(DWORD ProcessID)
 		std::cout << "OpenProcess() failed: " << GetLastError() << std::endl;
 		return FALSE;
 	}
-	LoadLibAddy = (LPVOID)GetProcAddress(GetModuleHandle("kernel32.dll"), "LoadLibraryA");
+	LoadLibAddy = (LPVOID)GetProcAddress(GetModuleHandle(L"kernel32.dll"), "LoadLibraryA");
 
 	RemoteString = (LPVOID)VirtualAllocEx(Proc, NULL, strlen(DLL_PATH) + 1, MEM_COMMIT, PAGE_READWRITE);
 	WriteProcessMemory(Proc, RemoteString, (LPVOID)DLL_PATH, strlen(DLL_PATH) + 1, NULL);
