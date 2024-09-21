@@ -10,7 +10,7 @@
 
 BOOL InjectDLL(DWORD ProcessID)
 {
-	LPCSTR DLL_PATH = "";
+	LPCSTR DLL_PATH = "C:\\Users\\mishe\\source\\repos\\dllinject\\x64\\Debug\\dllinject.dll";
 	LPVOID LoadLibAddy, RemoteString;
 
 	if (!ProcessID)
