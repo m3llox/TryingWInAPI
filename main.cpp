@@ -44,7 +44,7 @@ BOOL CALLBACK EnumWindowsProc(HWND hWnd, LPARAM lParam)
 		return TRUE; // Not visible
 	if (!SendMessage(hWnd, WM_GETTEXT, sizeof(String), (LPARAM)String))
 		return TRUE; // No window title
-	hInstance = (HINSTANCE)GetWindowLong(hWnd, GWL_HINSTANCE);
+	hInstance = (HINSTANCE)GetWindowLong(hWnd, GWLP_HINSTANCE);
 	dwThreadID = GetWindowThreadProcessId(hWnd, &dwProcessId);
 	std::cout << "PID: " << dwProcessId << '\t' << String << '\t' << std::endl;
 	return TRUE;

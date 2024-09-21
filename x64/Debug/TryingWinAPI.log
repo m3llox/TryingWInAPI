@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\mishe\source\repos\TryingWinAPI\TryingWinAPI\main.cpp(47,14): warning C4312: 'type cast': conversion from 'LONG' to 'HINSTANCE' of greater size
+C:\Users\mishe\source\repos\TryingWinAPI\TryingWinAPI\main.cpp(54,6): warning C4551: function call missing argument list
+  TryingWinAPI.vcxproj -> C:\Users\mishe\source\repos\TryingWinAPI\x64\Debug\TryingWinAPI.exe
